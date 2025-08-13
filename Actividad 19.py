@@ -12,3 +12,14 @@ class Galleta:
 
     def mostrar_informacion(self):
         print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}")
+
+class GalletaChispas(Galleta):
+    def __init__(self,nombre,precio,peso,canitdad_chispas):
+        super().__init__(nombre,precio,peso)
+        if canitdad_chispas <= 0:
+            print("La cantidad de chispas debe ser mayor a 0")
+        self.cantidad_chispas= canitdad_chispas
+
+    def mostrar_informacion(self):
+        print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Cantidad Chispas{self.cantidad_chispas}")
+
