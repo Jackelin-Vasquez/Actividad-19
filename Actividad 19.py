@@ -29,3 +29,11 @@ class Relleno:
 
     def describir_relleno(self):
         print(f"relleno de {self.sabor_relleno}")
+
+class GalletaRellena(Galleta,Relleno):
+    def __init__(self,nombre,precio,peso,sabor_relleno):
+        Galleta.__init__(self,nombre,precio,peso)
+        Relleno.__init__(self,sabor_relleno)
+
+        def mostrar_informacion(self):
+            print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Relleno:{self.describir_relleno()}")
