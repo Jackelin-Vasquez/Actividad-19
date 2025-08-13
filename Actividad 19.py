@@ -111,7 +111,9 @@ def lista_galletas():
         print("Lista de galletas vacia :(")
     else:
         for indice,galleta in enumerate(Galletas,start=1):
-            print(f"{indice}.{galleta.mostrar_informacion()}")
+            print(f"{indice}.Información de galleta:")
+            print(galleta.mostrar_informacion())
+            print("---"*4)
 
 def bucar_galleta_nombre():
     nombre= input("Ingrese nombre a buscar:")
