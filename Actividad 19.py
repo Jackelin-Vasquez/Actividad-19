@@ -106,3 +106,9 @@ def registrar_galleta_rellena():
             print("Error.Debe ingresar números...")
         except Exception as e:
             print("Ocurrio un error inesperado :(.",e)
+def lista_galletas():
+    if not Galletas:
+        print("Lista de galletas vacia :(")
+    else:
+        for indice,galleta in enumerate(Galletas):
+            print(f"{indice}.{galleta.mostrar_informacion()}")
