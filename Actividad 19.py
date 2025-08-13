@@ -30,15 +30,15 @@ class Relleno:
         self.sabor_relleno= sabor_relleno
 
     def describir_relleno(self):
-        print(f"relleno de {self.sabor_relleno}")
+        return f"relleno de {self.sabor_relleno}"
 
 class GalletaRellena(Galleta,Relleno):
     def __init__(self,nombre,precio,peso,sabor_relleno):
         Galleta.__init__(self,nombre,precio,peso)
         Relleno.__init__(self,sabor_relleno)
 
-        def mostrar_informacion(self):
-            print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Relleno:{self.describir_relleno()}")
+    def mostrar_informacion(self):
+        print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Relleno:{self.describir_relleno()}")
 
 def menu():
     print(f"---Menú---\n1.Registrar Galleta Básica\n2.Registrar Galleta con Chispas\n3.Registrar Gallera Rellena")
@@ -118,7 +118,7 @@ def lista_galletas():
     else:
         for indice,galleta in enumerate(Galletas,start=1):
             print(f"{indice}.Información de galleta:")
-            print(galleta.mostrar_informacion())
+            galleta.mostrar_informacion()
             print("---"*4)
 
 def bucar_galleta_nombre():
