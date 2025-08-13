@@ -112,3 +112,12 @@ def lista_galletas():
     else:
         for indice,galleta in enumerate(Galletas):
             print(f"{indice}.{galleta.mostrar_informacion()}")
+
+def bucar_galleta_nombre():
+    nombre= input("Ingrese nombre a buscar:")
+    for galleta in Galletas:
+        if galleta.nombre == nombre:
+            print("Galleta encontrado!")
+            galleta.mostrar_informacion()
+    else:
+        print(f"No se ha encontrado la galleta {nombre}...")
