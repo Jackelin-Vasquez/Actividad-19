@@ -121,3 +121,12 @@ def bucar_galleta_nombre():
             galleta.mostrar_informacion()
     else:
         print(f"No se ha encontrado la galleta {nombre}...")
+
+def eliminar_nombre():
+    nombre= input("Ingrese nombre de galleta a eliminar:")
+    for galleta in Galletas:
+        if galleta.nombre == nombre:
+            Galletas.remove(galleta)
+            print(f"{nombre} ha sido removido exitosamente!")
+    else:
+        print(f"{nombre} no ha sido encontrada...")
