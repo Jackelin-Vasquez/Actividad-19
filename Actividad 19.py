@@ -23,3 +23,9 @@ class GalletaChispas(Galleta):
     def mostrar_informacion(self):
         print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Cantidad Chispas{self.cantidad_chispas}")
 
+class Relleno:
+    def __init__(self,sabor_relleno):
+        self.sabor_relleno= sabor_relleno
+
+    def describir_relleno(self):
+        print(f"relleno de {self.sabor_relleno}")
