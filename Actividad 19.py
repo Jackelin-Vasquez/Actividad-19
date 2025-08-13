@@ -1,3 +1,5 @@
+Galletas = []  #Aqui se guardaran las galletas :)
+
 class Galleta:
     def __init__(self, nombre, precio, peso):
         if not nombre:
@@ -37,3 +39,28 @@ class GalletaRellena(Galleta,Relleno):
 
         def mostrar_informacion(self):
             print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}-Relleno:{self.describir_relleno()}")
+
+def menu():
+    print(f"---Menú---\n1.Registrar Galleta Básica\n2.Registrar Galleta con Chispas\n3.Registrar Gallera Rellena")
+    print(f"4.Listas Galletas\n5.Buscar por Nombre\n6.Eliminar por nombre.\n7.Salir.")
+
+#Funcion opcion 1 para registrar galletas
+def registrar_galleta():
+    nombre= input("Ingrese nombre de gallera")
+    encontrado= False
+    for galleta in Galletas:
+        if galleta.nombre.lower() == nombre.lower():
+            print(f"Galleta {nombre} ya existe")
+            encontrado= True
+            break
+    if not encontrado:
+        try:
+            precio= float(input("Ingrese precio de galleta:"))
+            peso= float(input("Ingrese peso de galleta:"))
+            galletas= Galleta(nombre,precio,peso)
+            Galletas.append(galletas)
+            print("Galleta resgistrada :D!")
+        except ValueError:
+            print("Error.Ingrese número valido...")
+        except Exception as e:
+            print("Ocurrio un error inesperado :(:",e)
