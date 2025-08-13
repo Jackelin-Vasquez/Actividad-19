@@ -42,6 +42,7 @@ class GalletaRellena(Galleta,Relleno):
 
 def menu():
     print(f"---Menú---\n1.Registrar Galleta Básica\n2.Registrar Galleta con Chispas\n3.Registrar Gallera Rellena")
+<<<<<<< HEAD
     print(f"4.Listas Galletas\n5.Buscar por Nombre\n6.Eliminar por nombre.\n7.Salir.")
 
 #Funcion opcion 1 para registrar galletas
@@ -64,3 +65,6 @@ def registrar_galleta():
             print("Error.Ingrese número valido...")
         except Exception as e:
             print("Ocurrio un error inesperado :(:",e)
+=======
+    print(f"4.Listas Galletas\n5.Buscar por Nombre\n6.Eliminar por nombre.\n7.Salir.")
+>>>>>>> origin/master
