@@ -80,16 +80,19 @@ def registrar_galleta_chispas():
             encontrado= True
             break
     if not encontrado:
-        try:
-            precio= float(input("Ingrese precio de galleta:"))
-            peso= float(input("Ingrese peso de galleta:"))
-            cantida_chispas= int(input("Ingrese cantidad de chispas:"))
-            nueva_galleta= GalletaChispas(galleta_chispas,precio,peso,cantida_chispas)
-            Galletas.append(nueva_galleta)
-        except ValueError:
-            print("Error.Ingrese números...")
-        except Exception as e:
-            print("Ocurrio un error inesperado...",e)
+        precio= numero("Ingrese precio de galleta con chispas:")
+        peso= numero("Ingrese preso de galleta con chispas:")
+        while True:
+            try:
+                cantida_chispas= int(input("Ingrese cantidad de chispas:"))
+                if cantida_chispas <= 0:
+                    print("La cantidad debe ser mayor que 0...")
+                else:
+                    break
+            except ValueError:
+                print("Error. Ingrese un número entero positivo...")
+        nueva_galleta= GalletaChispas(galleta_chispas,precio,peso,cantida_chispas)
+        Galletas.append(nueva_galleta)
 
 def registrar_galleta_rellena():
     nombre= input("Ingrese nombre de galleta rellena:")
@@ -97,7 +100,9 @@ def registrar_galleta_rellena():
     for galleta in Galletas:
         if galleta.nombre == nombre:
             print("Galleta ya resgitrada...")
-            encontrado= False
+            encontrado= True
+            break
+
     if not encontrado:
         try:
             precio= float(input("Ingrese precio de galleta:"))
