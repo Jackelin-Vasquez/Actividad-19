@@ -1,5 +1,3 @@
-from xxsubtype import bench
-
 Galletas = []  #Aqui se guardaran las galletas :)
 
 class Galleta:
@@ -121,6 +119,7 @@ def bucar_galleta_nombre():
         if galleta.nombre == nombre:
             print("Galleta encontrado!")
             galleta.mostrar_informacion()
+            break
     else:
         print(f"No se ha encontrado la galleta {nombre}...")
 
@@ -129,7 +128,8 @@ def eliminar_nombre():
     for galleta in Galletas:
         if galleta.nombre == nombre:
             Galletas.remove(galleta)
-            print(f"{nombre} ha sido removido exitosamente!")
+            print(f"{nombre} ha sido removida exitosamente!")
+            break
     else:
         print(f"{nombre} no ha sido encontrada...")
 
