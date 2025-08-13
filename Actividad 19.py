@@ -87,3 +87,22 @@ def registrar_galleta_chispas():
             print("Error.Ingrese números...")
         except Exception as e:
             print("Ocurrio un error inesperado...",e)
+
+def registrar_galleta_rellena():
+    nombre= input("Ingrese nombre de galleta rellena:")
+    encontrado= False
+    for galleta in Galletas:
+        if galleta.nombre == nombre:
+            print("Galleta ya resgitrada...")
+            encontrado= False
+    if not encontrado:
+        try:
+            precio= float(input("Ingrese precio de galleta:"))
+            peso= float(input("Ingrese peso de galleta:"))
+            relleno= input("Ingrese el relleno:")
+            nueva_galleta= GalletaRellena(nombre,precio,peso,relleno)
+            Galletas.append(nueva_galleta)
+        except ValueError:
+            print("Error.Debe ingresar números...")
+        except Exception as e:
+            print("Ocurrio un error inesperado :(.",e)
