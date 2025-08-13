@@ -1,3 +1,5 @@
+from xxsubtype import bench
+
 Galletas = []  #Aqui se guardaran las galletas :)
 
 class Galleta:
@@ -65,4 +67,23 @@ def registrar_galleta():
         except Exception as e:
             print("Ocurrio un error inesperado :(:",e)
 
-    print(f"4.Listas Galletas\n5.Buscar por Nombre\n6.Eliminar por nombre.\n7.Salir.")
+#Funcion par aopcion 2
+def registrar_galleta_chispas():
+    encontrado= False
+    galleta_chispas= input("Ingrese nombre de galleta con chispas:")
+    for galleta in Galletas:
+        if galleta.nombre == galleta_chispas:
+            print("Galleta ya resgitrada...")
+            encontrado= True
+            break
+    if not encontrado:
+        try:
+            precio= float(input("Ingrese precio de galleta:"))
+            peso= float(input("Ingrese peso de galleta:"))
+            cantida_chispas= int(input("Ingrese cantidad de chispas:"))
+            nueva_galleta= GalletaChispas(galleta_chispas,precio,peso,cantida_chispas)
+            Galletas.append(nueva_galleta)
+        except ValueError:
+            print("Error.Ingrese números...")
+        except Exception as e:
+            print("Ocurrio un error inesperado...",e)
