@@ -130,3 +130,34 @@ def eliminar_nombre():
             print(f"{nombre} ha sido removido exitosamente!")
     else:
         print(f"{nombre} no ha sido encontrada...")
+
+#Programa principal
+while True:
+    #Menú
+    menu()
+    opcion= input("Ingrese una opcion:")
+
+    match opcion:
+        case "1":
+            print("---Registro de galleta básica---")
+            registrar_galleta()
+        case "2":
+            print("---Registr de Galleta con Chispas---")
+            registrar_galleta_chispas()
+        case "3":
+            print("---Registro de Galletas Rellenas---")
+            registrar_galleta_rellena()
+        case "4":
+            print("---Lista de galletas")
+            lista_galletas()
+        case "5":
+            print("---Buscar por nombre---")
+            bucar_galleta_nombre()
+        case "6":
+            print("---Eliminar por nombre---")
+            eliminar_nombre()
+        case "7":
+            print("Saliendo del programa...")
+            break
+        case _:
+            print("Opcion no valida...")
