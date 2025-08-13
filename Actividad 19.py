@@ -44,6 +44,15 @@ def menu():
     print(f"---Menú---\n1.Registrar Galleta Básica\n2.Registrar Galleta con Chispas\n3.Registrar Gallera Rellena")
     print(f"4.Listas Galletas\n5.Buscar por Nombre\n6.Eliminar por nombre.\n7.Salir.")
 
+#Esta funcion servira para validar que el numero sea valido y si no volver a pedir, para evitar repetir el codigo una y otra vez
+def numero(mensaje):
+    while True:
+        try:
+            numero = float(input(mensaje))
+            return numero
+        except ValueError:
+            print("Error. Debe ingresar un número valido...")
+
 #Funcion opción 1 para registrar galletas
 def registrar_galleta():
     nombre= input("Ingrese nombre de gallera")
@@ -54,16 +63,12 @@ def registrar_galleta():
             encontrado= True
             break
     if not encontrado:
-        try:
-            precio= float(input("Ingrese precio de galleta:"))
-            peso= float(input("Ingrese peso de galleta:"))
-            galletas= Galleta(nombre,precio,peso)
-            Galletas.append(galletas)
-            print("Galleta resgistrada :D!")
-        except ValueError:
-            print("Error.Ingrese número valido...")
-        except Exception as e:
-            print("Ocurrio un error inesperado :(:",e)
+        precio= numero("Ingrese precio de gelleta:")
+        peso= numero(("Ingrese peso de galleta:"))
+        nueva_galleta= Galleta(nombre,precio,peso)
+        Galletas.append(nueva_galleta)
+        print(f"Galleta {nombre} registrada de forma existosa!")
+
 
 #Funcion par aopcion 2
 def registrar_galleta_chispas():
