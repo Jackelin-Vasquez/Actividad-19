@@ -52,6 +52,8 @@ def numero(mensaje):
             return numero
         except ValueError:
             print("Error. Debe ingresar un número valido...")
+        except Exception as e:
+            print("Error.Ocurrio un error inespetado :(..",e)
 
 #Funcion opción 1 para registrar galletas
 def registrar_galleta():
@@ -104,16 +106,12 @@ def registrar_galleta_rellena():
             break
 
     if not encontrado:
-        try:
-            precio= float(input("Ingrese precio de galleta:"))
-            peso= float(input("Ingrese peso de galleta:"))
-            relleno= input("Ingrese el relleno:")
-            nueva_galleta= GalletaRellena(nombre,precio,peso,relleno)
-            Galletas.append(nueva_galleta)
-        except ValueError:
-            print("Error.Debe ingresar números...")
-        except Exception as e:
-            print("Ocurrio un error inesperado :(.",e)
+        precio= numero("Ingrese precio de galleta rellena:")
+        peso= numero("Ingrese peso de galletra rellena:")
+        relleno= input("Ingrese el relleno:")
+        nueva_galleta= GalletaRellena(nombre,precio,peso,relleno)
+        Galletas.append(nueva_galleta)
+
 def lista_galletas():
     if not Galletas:
         print("Lista de galletas vacia :(")
