@@ -1,5 +1,6 @@
 Galletas = []  #Aqui se guardaran las galletas :)
 
+#Clase base "Galleta"
 class Galleta:
     def __init__(self, nombre, precio, peso):
         if not nombre:
@@ -18,6 +19,7 @@ class Galleta:
     def mostrar_informacion(self):
         print(f"Nombre:{self.nombre}-Precio:{self.precio}-Peso:{self.peso}")
 
+#Esta clase es "Hija" de la glase galleta
 class GalletaChispas(Galleta):
     def __init__(self,nombre,precio,peso,canitdad_chispas):
         super().__init__(nombre,precio,peso)
@@ -35,6 +37,7 @@ class Relleno:
     def describir_relleno(self):
         return f"relleno de {self.sabor_relleno}"
 
+#Esta clase hereda de clase galleta y clase relleno
 class GalletaRellena(Galleta,Relleno):
     def __init__(self,nombre,precio,peso,sabor_relleno):
         Galleta.__init__(self,nombre,precio,peso)
@@ -63,7 +66,7 @@ def registrar_galleta():
     nombre= input("Ingrese nombre de gallera")
     encontrado= False
     for galleta in Galletas:
-        if galleta.nombre.lower() == nombre.lower():
+        if galleta.nombre.lower() == nombre.lower(): # se verifica que la galleta este o no en la lista
             print(f"Galleta {nombre} ya existe")
             encontrado= True
             break
@@ -99,6 +102,7 @@ def registrar_galleta_chispas():
         nueva_galleta= GalletaChispas(galleta_chispas,precio,peso,cantida_chispas)
         Galletas.append(nueva_galleta)
 
+#funcion opcion 3 - registro galleta con relleno
 def registrar_galleta_rellena():
     nombre= input("Ingrese nombre de galleta rellena:")
     encontrado= False
@@ -115,6 +119,7 @@ def registrar_galleta_rellena():
         nueva_galleta= GalletaRellena(nombre,precio,peso,relleno)
         Galletas.append(nueva_galleta)
 
+#funcion opcion 4 listado de galletas
 def lista_galletas():
     if not Galletas:
         print("Lista de galletas vacia :(")
@@ -124,6 +129,7 @@ def lista_galletas():
             galleta.mostrar_informacion()
             print("---"*4)
 
+#Funcion opcion 5- busqueda de galleta por nombre
 def bucar_galleta_nombre():
     nombre= input("Ingrese nombre a buscar:")
     for galleta in Galletas:
@@ -134,6 +140,7 @@ def bucar_galleta_nombre():
     else:
         print(f"No se ha encontrado la galleta {nombre}...")
 
+#funcion 6. Eliminar registro de galleta pro nombre
 def eliminar_nombre():
     nombre= input("Ingrese nombre de galleta a eliminar:")
     for galleta in Galletas:
