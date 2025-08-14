@@ -88,7 +88,7 @@ def registrar_galleta_chispas():
         galleta_chispas= input("Ingrese nombre de galleta con chispas:")
         for galleta in Galletas:
             if galleta.nombre.lower() == galleta_chispas.lower():
-                raise RegistroDuplicadoError("Error.El nombre ya existe...")
+                raise RegistroDuplicadoError(f"Error.{galleta_chispas} ya existe...")
 
         precio= numero("Ingrese precio de galleta con chispas:")
         peso= numero("Ingrese preso de galleta con chispas:")
