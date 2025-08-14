@@ -4,10 +4,13 @@ class Galleta:
     def __init__(self, nombre, precio, peso):
         if not nombre:
             print("El nombre no puede estar vacio...")
+            return
         if precio <= 0:
             print("El precio debe ser mayor a 0...")
+            return
         if peso <= 0:
             print("El peso debe ser mayor a 0...")
+            return
         self.nombre= nombre
         self.precio = precio
         self.peso= peso
@@ -77,7 +80,7 @@ def registrar_galleta_chispas():
     encontrado= False
     galleta_chispas= input("Ingrese nombre de galleta con chispas:")
     for galleta in Galletas:
-        if galleta.nombre == galleta_chispas:
+        if galleta.nombre.lower() == galleta_chispas.lower():
             print("Galleta ya resgitrada...")
             encontrado= True
             break
@@ -100,7 +103,7 @@ def registrar_galleta_rellena():
     nombre= input("Ingrese nombre de galleta rellena:")
     encontrado= False
     for galleta in Galletas:
-        if galleta.nombre == nombre:
+        if galleta.nombre.lower() == nombre.lower():
             print("Galleta ya resgitrada...")
             encontrado= True
             break
@@ -124,7 +127,7 @@ def lista_galletas():
 def bucar_galleta_nombre():
     nombre= input("Ingrese nombre a buscar:")
     for galleta in Galletas:
-        if galleta.nombre == nombre:
+        if galleta.nombre.lower() == nombre.lower():
             print("Galleta encontrado!")
             galleta.mostrar_informacion()
             break
@@ -134,7 +137,7 @@ def bucar_galleta_nombre():
 def eliminar_nombre():
     nombre= input("Ingrese nombre de galleta a eliminar:")
     for galleta in Galletas:
-        if galleta.nombre == nombre:
+        if galleta.nombre.lower() == nombre.lower():
             Galletas.remove(galleta)
             print(f"{nombre} ha sido removida exitosamente!")
             break
