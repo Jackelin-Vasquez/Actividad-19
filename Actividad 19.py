@@ -115,7 +115,7 @@ def registrar_galleta_rellena():
                 raise RegistroDuplicadoError(f"Error.{nombre} ya se encuentra registrado...")
 
         precio= numero("Ingrese precio de galleta rellena:")
-        peso= numero("Ingrese peso de galletra rellena:")
+        peso= numero("Ingrese peso de galleta rellena:")
         relleno= input("Ingrese el relleno:")
         nueva_galleta= GalletaRellena(nombre,precio,peso,relleno)
         Galletas.append(nueva_galleta)
